@@ -1,0 +1,18 @@
+@mixin muli {
+    font-family: 'Muli',arial;
+}
+
+@mixin abel {
+    font-family : 'Abel',arial;
+}
+
+h1 {
+    
+}
+
+h2 {
+    text-transform:uppercase;
+    font-size:2.75em;
+    @include abel;
+    font-weight:normal;
+}

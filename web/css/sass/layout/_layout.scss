@@ -1,0 +1,6 @@
+body {
+    font-size:1em;
+    @include muli;
+    color: $color-main;
+    background:url(../../img/bg-white.jpg) repeat left top;
+}

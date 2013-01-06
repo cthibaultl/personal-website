@@ -1,0 +1,69 @@
+header {
+    background:url(../../img/bg-black.jpg) repeat-x left top;
+    background-size: 100% 6px;
+    overflow:hidden;
+    
+    nav {
+        width:980px;
+        margin:auto;
+        position:relative;
+        
+        .mainnav {
+            padding:4.5em 0 0 0;
+            margin:0 -11px 0 0;
+            float:right;
+            
+            li {
+                @include inline-block;
+                vertical-align: top;
+                
+                a {
+                    color:$color-nav;
+                    font-size: 1.625em;
+                    @include abel;
+                    text-decoration:none;
+                    text-transform: uppercase;
+                    padding: 11px 10px 10px 10px;
+                    display: block;
+                    margin-left: 11px;
+                    background:transparent;
+                    @include transition(all,500ms);
+                    
+                    &:hover {
+                        background:$color-nav-over-bg;
+                        color:$color-nav-over;
+                        @include transition(all,500ms);
+                    }
+                }
+                &.active {
+                    a {
+                        background:$color-nav-over-bg;
+                        color:$color-nav-over;
+                    }
+                }
+            }
+        } //mainnav
+        .secondarynav {
+            background:url(../../img/bg-black.jpg) repeat left top;
+            position:absolute;
+            right:0;
+            top:6px;
+            margin:0;
+            padding: 4px 11px 5px 13px;
+            
+            li {
+                a {
+                    @include abel;
+                    font-size:1.125em;
+                    text-decoration:none;
+                    color:$color-nav-over;
+                    text-transform: uppercase;
+                    
+                    &:hover {
+                        text-decoration:underline;
+                    }
+                }
+            }
+        } // secondarynav
+    }
+}

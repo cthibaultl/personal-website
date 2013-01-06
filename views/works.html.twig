@@ -1,0 +1,47 @@
+<section class="works" id="works">
+    <h2 class="visuallyhidden">Réalisations</h2>
+    <div class="works-wrapper">
+        <ul>
+            {% for work in works %}
+            <li class="{{ work.categories|join(' ') }}" id="{{ work.id }}">
+                <img src="img/{{ work.id }}.jpg" alt="{{ work.alt }}" />
+                <div class="wrapper">
+                    <div class="wrap">
+                        <span class="title">{{ work.title }}</span>
+                        <span class="category">{{ work.category }}</span>
+                    </div>
+                </div>
+            </li>            
+            {% endfor %}
+        </ul>
+        <div class="bigs">
+            {% for work in works %}
+                <div class="big {{ work.id }}">
+                    <div>
+                        <h3>
+                            {% if work.link|length > 0 %}
+                                <a href="{{ work.link }}">
+                                    {{ work.title }}
+                                </a>
+                            {% else %}
+                                {{ work.title }}
+                            {% endif %}
+                        </h3>
+                        <p class="category">{{ work.category }}</p>
+                        <time datetime="{{ work.date }}">{{ work.date }}</time>
+                        <p class="desc">
+                            {{ work.desc }}
+                        </p>
+                    </div>
+                    {% if work.link|length > 0 %}
+                        <a href="{{ work.link }}">
+                            <img src="img/{{ work.id }}-big.jpg" alt="" />
+                        </a>
+                    {% else %}
+                        <img src="img/{{ work.id }}-big.jpg" alt="" />
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

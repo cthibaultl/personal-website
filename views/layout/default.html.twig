@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        <link href='http://fonts.googleapis.com/css?family=Abel|Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/stylesheets/main.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <a href="#" class="skip visuallyhidden focusable">Passer au contenu</a>
+            <h1 class="visuallyhidden">Site personnel de Cynthia Thibault-Larouche</h1>
+            <nav role="navigation">
+                <h2 class="visuallyhidden">Navigation principale</h2>
+                <ul class="mainnav">
+                    <li class="active">
+                        <a href="#about">À propos</a>
+                    </li>
+                    <li>
+                        <a href="#works">Réalisations</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <h2 class="visuallyhidden">Navigation secondaire</h2>
+                <ul class="secondarynav">
+                    <li>
+                        <a href="accessibilite">Accessibilité</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div id="main" role="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <footer>
+            <div class="footer-wrap" id="contact">
+                <ul>
+                    <li class="email">
+                        <a href="mailto:contact@cthibaultl.com"><span class="visuallyhidden">Email</span></a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/cthibaultl"><span class="visuallyhidden">Twitter</span></a>
+                    </li>
+                    <li class="linkedin">
+                        <a href="http://ca.linkedin.com/pub/cynthia-thibault-larouche/30/489/845"><span class="visuallyhidden">LinkedIn</span></a>
+                    </li>
+                </ul>
+                <p>
+                    © Tous droits réservés cthibaultl.com
+                </p>
+            </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <!--<script src="js/libs/jquery.masonry.min.js"></script>-->
+        <script src="js/vendor/jquery.imagesloaded.min.js"></script>
+        <script src="js/vendor/jquery.isotope.min.js"></script>
+        <script src="js/vendor/raphael-min.js"></script>
+        <script src="js/vendor/jquery.scrollto.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/libs/chart.js"></script>
+        <script src="js/libs/works.js"></script>
+        <script src="js/libs/axs.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));*/
+        </script>
+    </body>
+</html>

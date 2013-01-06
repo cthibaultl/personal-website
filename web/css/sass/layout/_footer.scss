@@ -1,0 +1,63 @@
+footer {
+    clear:both;
+    background:url(../../img/bg-black.jpg) repeat-x left top;
+    overflow:hidden;
+    margin-top:100px;
+    
+    .footer-wrap {
+        width:980px;
+        margin:auto;
+        overflow:hidden;
+        padding:27px 0 24px 0;
+        
+        ul {
+            padding:0;
+            margin:0;
+            float:left;
+            
+            li {
+                list-style:none;
+                @include inline-block;
+                padding:0;
+                margin-right:28px;
+                
+                a {
+                    display: block;
+                }
+                &.email a {
+                    background:url(../../img/icon-email.png) no-repeat left top;
+                    width:25px;
+                    height:23px;
+                    
+                    &:hover {
+                        background:url(../../img/icon-email-over.png) no-repeat left top;
+                    }
+                }
+                &.twitter a {
+                    background:url(../../img/icon-twitter.png) no-repeat left top;
+                    width:28px;
+                    height:23px;
+                    
+                    &:hover {
+                        background:url(../../img/icon-twitter-over.png) no-repeat left top;
+                    }
+                }
+                &.linkedin a {
+                    background:url(../../img/icon-linkedin.png) no-repeat left top;
+                    width:28px;
+                    height:29px;
+                    
+                    &:hover {
+                        background:url(../../img/icon-linkedin-over.png) no-repeat left top;
+                    }
+                }
+            }
+        }
+        p {
+            float:right;
+            font-size:0.75em;
+            color:$color-nav-over;
+            margin: 6px 40px 0px 0px;
+        }
+    }
+}

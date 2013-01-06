@@ -1,0 +1,14 @@
+input:focus,
+a:focus,
+button:focus,
+h2[tabindex="-1"]:focus {
+    outline:2px solid $color-focus;
+    outline-offset:2px;
+}
+
+input.hover:focus,
+a.hover:focus,
+button.hover:focus,
+h2[tabindex="-1"].hover:focus {
+    outline:none;
+}
