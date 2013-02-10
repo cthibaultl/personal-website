@@ -1,57 +1,70 @@
 {% extends "layout/default.html.twig" %}
 
+{% block title %} Page d'accessibilité du site Web personnel de Cynthia Thibault-Larouche {% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Cette page traite de l'accessibilité du site sur les réalisations de Cynthia Thibault-Larouche en tant que designer Web et intégratrice Web.">
+    <meta name="DC.description" content="Cette page traite de l'accessibilité du site sur les réalisations de Cynthia Thibault-Larouche en tant que designer Web et intégratrice Web.">
+{% endblock %}
+
+{% block body %}accessibility{% endblock %}
+
 {% block content %}
+
 <h1>Accessibilité</h1>
 <h2>Conformité</h2>
 <p>
     Je m'engage à assurer l'accessibilité de mon site Web aux personnes ayant des incapacités ou des restrictions techniques majeures. Je vise la conformité au <a href="http://www.tresor.gouv.qc.ca/fr/ressources-informationnelles/standards-sur-laccessibilite-du-web/">Standard sur l'accessibilité d'un site Web du gouvernement du Québec (SGQRI 008-01).</a>
 </p>
+<p>
+	Actuellement, la charte graphique n'est pas accessible au clavier. Ceci sera corrigé dans les plus brefs délais.
+</p>
 
 <h2>Programmation et technologies utilisées</h2>
 <p>
-    Le site utilise le langage de balisage HTML5 ainsi que le CSS et le JavaScript.
+    Ce site utilise le langage de balisage HTML5 ainsi que le CSS et le JavaScript.
 </p>
 
 <h3>Structure et présentation</h3>
 
-<ol>
+<ul>
     <li>
-    Aucun cadre (frame) n’est utilisé.
+    Aucun cadre (frame) n'est utilisé.
     </li>
     <li>
-        Aucun tableau de présentation n’est utilisé pour faire la mise en page du site.
+        Aucun tableau de présentation n'est utilisé pour faire la mise en page du site.
     </li>
-</ol>
+</ul>
 
 <h3>Images</h3>
 
-<ol>
+<ul>
     <li>
-        Chaque image informative est accompagnée d’un équivalent textuel.
+        Chaque image informative est accompagnée d'un équivalent textuel.
     </li>
     <li>
         Aucune fluctuation lumineuse ni aucun clignotement dont le rythme est supérieur à trois fois la seconde n'est utilisé dans les animations.
     </li>
-</ol>
+</ul>
 
 <h3>Navigation</h3>
 
-<ol>
+<ul>
     <li>
-        Le menu principal du site est utilisable sans Javascript et est balisé à l’aide d’éléments de liste.
+        Le menu principal du site est utilisable sans Javascript et est balisé à l'aide d'éléments de liste.
     </li>
     <li>
-        Aucun raccourci clavier n’est intégré au site.
+        Aucun raccourci clavier n'est intégré au site.
     </li>
     <li>
         Aucune actualisation de page ni aucun changement de contexte ne se font automatiquement.
     </li>
-</ol>
+</ul>
 
 <h2>Vérification de l'accessibilité de ce site</h2>
 <p>Ce site a été vérifié avec les technologies informatiques suivantes :</p>
 
-<ol>
+<ul>
     <li>
         Non Visual Desk Accessibility (NVDA) version 2012.2.1
     </li>
@@ -70,11 +83,12 @@
     <li>
         Internet Explorer version 7, 8 et 9
     </li>
-</ol>
+</ul>
 <p>Ce site est optimisé pour être utilisé avec NVDA et Firefox.</p>
 
 <h2>Commentaires</h2>
 <p>
     Au cas où des obstacles seraient rencontrés pour des éléments couverts par le <a href="http://www.tresor.gouv.qc.ca/fr/ressources-informationnelles/standards-sur-laccessibilite-du-web/">Standard sur l'accessibilité d'un site Web du gouvernement du Québec (SGQRI 008-01)</a>, je vous saurais gré de me transmettre un courriel à cet effet afin que je puisse y remédier dans les plus brefs délais.
 </p>
+
 {% endblock %}

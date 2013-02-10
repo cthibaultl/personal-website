@@ -9,6 +9,7 @@ $(function(){
         thumbsList : undefined,
         wrapper : undefined,
         bigs : undefined,
+        active : undefined,
         loadImagesBefore : function(callback){
             var $this = this;
             
@@ -46,17 +47,6 @@ $(function(){
             
             return ul;
         },
-        bindClickFilter : function(){
-            var $this = this;
-            
-            this.filterList.find('button').click(function(){
-                $this.selector = '.'+$(this).attr('data-filter');
-                $this.changeFilter($this.selector);
-                $(this).parent().parent().find('.active').removeClass('active');
-                $(this).addClass('active');
-                $this.bigs.find('.big').fadeOut(500);
-            });
-        },
         transformInBtn : function(){
             this.thumbsList.find('li .wrap').each(function(){
                 var txt = $(this).parent().find('img').attr('alt');
@@ -69,21 +59,42 @@ $(function(){
                 $(this).remove();
             });
         },
+        bindClickFilter : function(){
+            var $this = this;
+            
+            this.filterList.find('button').click(function(){
+                $this.selector = '.'+$(this).attr('data-filter');
+                $this.changeFilter($this.selector);
+                $(this).parent().parent().find('.active').removeClass('active');
+                $(this).addClass('active');
+                $this.bigs.find('.big').fadeOut(500);
+            });
+        },
         bindClickThumb : function(){
             var $this = this;
             
             $this.thumbsList.find('li button, li').on('click',function(){
-                var el = $(this);
-                var id;
+                var el = $(this),
+                	id,
+                	title;
                 
                 if(el[0].tagName.toUpperCase() == 'BUTTON'){
                     id = el.parent().attr('id');
                 } else {
                     id = el.attr('id');
                 }
-        
+        		
+        		$this.active = id;
+        		
                 $this.bigs.find('.'+id).addClass('active').fadeIn();
                 
+                title = $this.bigs.find('.'+id+' h3');
+                if(title.find('a').length == 0){
+                	title.attr('tabindex','-1').focus();
+                } else {
+                	title.find('a').focus();
+                }
+                                
                 $this.changeFilter('none');
                 
                 $this.container.css('overflow','hidden');
@@ -96,7 +107,16 @@ $(function(){
                 $this.bigs.find('.active').fadeOut();
                 $this.changeFilter($this.selector);
                 $this.container.css('overflow','visible');
+                
+                $this.thumbsList.find('#'+$this.active+' button').focus();
             });
+        },
+        bindFocusOutTitle : function(){
+        	var $this = this;
+        	
+        	$this.bigs.find('h3').on('focusout',function(){
+        		$(this).removeAttr('tabindex');
+        	});
         },
         changeFilter : function(filt){
             this.container.isotope({ filter: filt });
@@ -107,13 +127,17 @@ $(function(){
             this.wrapper = wrapper;
             this.bigs = this.wrapper.find('.bigs');
             this.container = ctn;
+            
             this.loadImagesBefore(function(){
                 $this.createBackBtn();
                 $this.transformInBtn();
+                
                 $this.bindClickFilter();
                 $this.bindClickThumb();
                 $this.bindClickBackBtn();
+                $this.bindFocusOutTitle();
             });
+            
             this.filterList = this.createFilterList();
             this.wrapper.prepend(this.filterList);
         }

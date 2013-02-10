@@ -1,5 +1,14 @@
 {% extends "layout/default.html.twig" %}
 
+{% block title %} Site Web personnel de Cynthia Thibault-Larouche {% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Ce site concerne les réalisations de Cynthia Thibault-Larouche en tant que designer Web et intégratrice Web.">
+    <meta name="DC.description" content="Ce site concerne les réalisations de Cynthia Thibault-Larouche en tant que designer Web et intégratrice Web.">
+{% endblock %}
+
+{% block body %}home{% endblock %}
+
 {% block content %}
     {% include 'about.html.twig' %}
     {% include 'works.html.twig' %}

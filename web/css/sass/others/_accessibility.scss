@@ -1,7 +1,9 @@
 input:focus,
 a:focus,
 button:focus,
-h2[tabindex="-1"]:focus {
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus,
+h3[tabindex="-1"]:focus {
     outline:2px solid $color-focus;
     outline-offset:2px;
 }
@@ -9,6 +11,24 @@ h2[tabindex="-1"]:focus {
 input.hover:focus,
 a.hover:focus,
 button.hover:focus,
-h2[tabindex="-1"].hover:focus {
+h1[tabindex="-1"].hover:focus,
+h2[tabindex="-1"].hover:focus,
+h3[tabindex="-1"].hover:focus,
+header nav .secondarynav li a.hover:focus {
     outline:none;
+}
+
+a.skip.focusable.visuallyhidden {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+}
+
+header nav .secondarynav li a:focus {
+	outline:2px solid $color-focus-inverse;
+}
+
+#main .works .works-wrapper ul li .wrapper .wrap:focus,
+#main .works .works-wrapper ul li .wrapper button:focus {
+	outline-offset:-4px;
 }

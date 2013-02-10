@@ -5,6 +5,12 @@ $(function(){
     Axs = new Class({
         // Skip to main content link
         skip : function(skipEl,elToFocus){            
+            if(elToFocus[0].length > 0){
+            	elToFocus = elToFocus[0];
+            } else {
+            	elToFocus = elToFocus[1];
+            }
+            
             skipEl.on('click',function(e){
                 e.preventDefault();
                 elToFocus.attr('tabindex','-1');

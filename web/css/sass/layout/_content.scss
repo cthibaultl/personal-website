@@ -10,7 +10,7 @@
             position: relative;
             width: 450px;
             height: 468px;
-            margin: -123px 186px 0 -187px;
+            margin: -123px 186px 15px -187px;
             
             svg {
                 position: absolute !important;
@@ -24,7 +24,7 @@
             }
         }
         .infos {
-            width: 510px;
+            width: 30em;
             margin-left: 15px;
             @include inline-block;
             vertical-align:top;
@@ -39,15 +39,16 @@
         z-index:1;
         
         > ul {
-            padding: 0;
+            padding: 0 0 22px 0;
             margin: 0;
-            overflow: hidden;
-            padding-bottom: 22px;
+            height:2.5em;
             
             li {
                 list-style: none;
                 float: left;
                 margin-right: 20px;
+                background:none;
+                padding:0;
                 
                 button {
                     border: none;
@@ -95,11 +96,11 @@
                         overflow: hidden;
                         
                         .wrap,button {
-                            height: 60px;
+                            height: 4em;
                             background: none;
                             border: none;
                             padding: 0;
-                            bottom: -60px;
+                            bottom: -4em;
                             left: 1px;
                             position: absolute;
                             width: 292px;
@@ -107,21 +108,23 @@
                             color:$color-nav-over;
                             text-align: left;
                             background:url(../../img/bg-black.jpg) repeat-x left top;
-                            transition: all 500ms;
-                            -webkit-transition: all 500ms;
-                            -moz-transition: all 500ms;
-                            -o-transition: all 500ms;
-                            -webkit-transition: all 500ms;
-                            -ms-transition: all 500ms;
+                            @include transition(all,500ms);
+                            padding-top:4px;
                             
+                            &:focus {
+                            	@include transition(none,500ms);
+                                bottom:0;
+                            }
                             span {
                                 display: block;
-                                text-indent: 12px;
+                                padding-left: 12px;
                                 
                                 &.title {
                                     text-transform: uppercase;
                                     @include abel;
                                     font-size: 1.25em;
+                                    margin-bottom:4px;
+                                    line-height:1em;
                                 }
                                 &.category {
                                     font-size: 0.75em;
@@ -132,23 +135,7 @@
                     }
                     &:hover {
                         .wrap,button {
-                            transition: all 500ms;
-                            -webkit-transition: all 500ms;
-                            -moz-transition: all 500ms;
-                            -o-transition: all 500ms;
-                            -webkit-transition: all 500ms;
-                            -ms-transition: all 500ms;
                             bottom:0;
-                            
-                            &:focus {
-                                transition: all 500ms;
-                                -webkit-transition: all 500ms;
-                                -moz-transition: all 500ms;
-                                -o-transition: all 500ms;
-                                -webkit-transition: all 500ms;
-                                -ms-transition: all 500ms;
-                                bottom:0;
-                            }
                         }
                     }
                 }
