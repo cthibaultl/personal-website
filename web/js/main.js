@@ -28,20 +28,28 @@ $(function(){
             });
         },
         navToContent : function(navEl,id){
-        	var current = navEl.find('a[href="/'+id+'"]');
+        	var current = navEl.find('a[href="/'+id+'"]'),
+        		keyboardUser = false;
         	
         	navEl.parent().find('.active').removeClass('active');
             current.parent().addClass('active');
             
             $(id).ScrollTo();
             
-            // Ne faire le focus que si c'est au clavier
-            $(id).find('a,button').eq(0).focus();
+            if(!current.hasClass('hover')){
+	            keyboardUser = true;
+            }
+            
+            if(keyboardUser){
+            	$(id).find('a,button').eq(0).focus();
+            }
         },
         constructor : function(){
             this.axs = new Application.Axs($('.skip'),[$('#main .about h2'),$('#main h1')]);
-            this.chart = new Application.Chart('figure','732.819','683.582');
-            this.works = new Application.Works($('.works-wrapper ul'),$(".works"));
+            if($('figure').length > 0){
+            	this.chart = new Application.Chart('figure','732.819','683.582');
+            	this.works = new Application.Works($('.works-wrapper ul'),$(".works .all-wrapper"));
+            }
             this.navigation($('.mainnav li'));
         }
     });

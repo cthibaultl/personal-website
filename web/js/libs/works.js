@@ -1,7 +1,7 @@
 var Works;
 
 $(function(){
-
+	
     Works = new Class({
         selector : '.all',
         container : undefined,
@@ -10,6 +10,7 @@ $(function(){
         wrapper : undefined,
         bigs : undefined,
         active : undefined,
+        worksH : undefined,
         loadImagesBefore : function(callback){
             var $this = this;
             
@@ -18,6 +19,8 @@ $(function(){
                     itemSelector : 'li',
                     layoutMode : 'masonry'
                 });
+                
+                worksH = $this.wrapper.find('.works-wrapper').height();
                 
                 $this.container.css('overflow','visible');
                 
@@ -38,7 +41,7 @@ $(function(){
                             {data:'draw',txt:'Dessin'}];
             
             for(var i=0; i < categories.length; i++){
-                var li = $('<li><button data-filter="'+categories[i].data+'">'+categories[i].txt+'</button></li>')
+                var li = $('<li><button data-filter="'+categories[i].data+'"><span class="visuallyhidden">Filtrer par </span> <span class="txt">'+categories[i].txt+'</span></button></li>')
                 if(i == 0){
                     li.find('button').addClass('active');
                 }
@@ -49,8 +52,8 @@ $(function(){
         },
         transformInBtn : function(){
             this.thumbsList.find('li .wrap').each(function(){
-                var txt = $(this).parent().find('img').attr('alt');
-                $(this).append('<span class="visuallyhidden">Voir le détail du projet '+txt+'</span>');
+                //var txt = $(this).parent().parent().find('img').attr('alt');
+                $(this).prepend('<span class="visuallyhidden">Voir le détail du projet </span>');
                 var ctn = $(this).html();
                 var btn = $('<button></button>')
                 
@@ -68,6 +71,28 @@ $(function(){
                 $(this).parent().parent().find('.active').removeClass('active');
                 $(this).addClass('active');
                 $this.bigs.find('.big').fadeOut(500);
+                
+                var txtArialive = 'Les projets '+$(this).find('.txt').text()+' sont affichés.';
+                $('#arialive').text(txtArialive);
+                
+                $this.container.css('overflow','hidden');
+                
+                $this.thumbsList.find('li .wrapper').css('display','block');
+                $this.container.isotope( 'reLayout', function(list){
+	                $this.thumbsList.find('li .wrapper').css('display','none');
+	                for(var i=0; i < list.length; i++){
+		                $(list[i]).find('.wrapper').css('display','block');
+	                }
+	                //$this.container.css('overflow','hidden');
+	                
+	                var h = $($this.container).height();
+	                $this.wrapper.find('.works-wrapper').animate({
+		                height:h
+	                },300, function(){
+		                $this.wrapper.find('.works-wrapper').height('auto');
+		                worksH = $this.wrapper.find('.works-wrapper').height();
+	                });
+                });
             });
         },
         bindClickThumb : function(){
@@ -76,7 +101,13 @@ $(function(){
             $this.thumbsList.find('li button, li').on('click',function(){
                 var el = $(this),
                 	id,
-                	title;
+                	title,
+                	keyboardUser = false,
+                	bigH;
+
+                if(!$(this).hasClass('hover')){
+                    keyboardUser = true;
+                }
                 
                 if(el[0].tagName.toUpperCase() == 'BUTTON'){
                     id = el.parent().attr('id');
@@ -86,29 +117,56 @@ $(function(){
         		
         		$this.active = id;
         		
+        		bigH = $this.bigs.find('.'+id+' img')[0].height;
+        		
                 $this.bigs.find('.'+id).addClass('active').fadeIn();
                 
-                title = $this.bigs.find('.'+id+' h3');
-                if(title.find('a').length == 0){
-                	title.attr('tabindex','-1').focus();
-                } else {
-                	title.find('a').focus();
+                $this.wrapper.find('.works-wrapper').animate({
+	                height:bigH
+                },500);
+                
+                title = $this.bigs.find('.'+id+' h3');                
+                if(keyboardUser){
+	                if(title.find('a').length == 0){
+	                	title.attr('tabindex','-1').focus();
+	                } else {
+	                	title.find('a').focus();
+	                }
                 }
                                 
                 $this.changeFilter('none');
                 
                 $this.container.css('overflow','hidden');
+                
+                $this.container.isotope( 'reLayout', function(){
+	            	$this.thumbsList.find('li .wrapper').css('display','none');
+                });
             });
         },
         bindClickBackBtn : function(){
-            var $this = this;
+            var $this = this,
+                keyboardUser = false;
             
             this.bigs.on('click','.back button',function(){
                 $this.bigs.find('.active').fadeOut();
-                $this.changeFilter($this.selector);
-                $this.container.css('overflow','visible');
+                $this.wrapper.find('.works-wrapper').animate({
+	                height:worksH
+                },500, function(){
+	                $this.wrapper.find('.works-wrapper').height('auto');
+                });
                 
-                $this.thumbsList.find('#'+$this.active+' button').focus();
+                $this.changeFilter($this.selector);
+                //$this.container.css('overflow','visible');
+                
+                $this.thumbsList.find('li .wrapper').css('display','block');
+                
+                if(!$(this).hasClass('hover')){
+                    keyboardUser = true;
+                }
+                
+                if(keyboardUser){
+                	$this.thumbsList.find('#'+$this.active+' button').focus();
+                }
             });
         },
         bindFocusOutTitle : function(){
@@ -118,8 +176,14 @@ $(function(){
         		$(this).removeAttr('tabindex');
         	});
         },
-        changeFilter : function(filt){
+        changeFilter : function(filt, callback){
             this.container.isotope({ filter: filt });
+            
+            this.container.isotope( 'reLayout', function(){
+            	if(callback){
+	            	callback();
+            	}
+            });
         },
         constructor : function(ctn,wrapper){
             var $this = this;

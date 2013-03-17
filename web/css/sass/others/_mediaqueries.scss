@@ -1,0 +1,146 @@
+@media screen and (max-width: 960px) {
+	header {
+		nav {
+			width: 700px;
+		}
+	}
+	#main {
+		width: 680px;
+		padding: 0 10px;
+		margin-top: 130px;
+	
+		.about {
+			margin-bottom: 80px;
+			
+			figure {
+				margin-left:-30px;
+			}
+			.infos {
+				width: 680px;
+				margin: 90px 0 0 0;
+			}
+		}
+		.works {
+			.works-wrapper {
+				.bigs {
+					width: 680px;
+					
+					.big {
+						img {
+							width: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		.footer-wrap {
+			width: 700px;
+			padding-left: 10px;
+			padding-right: 10px;
+			
+			p {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	header {
+		nav {
+			width: 320px;
+			
+			.mainnav {
+				margin: 0 10px;
+				
+				li {
+					display: block;
+					
+					a {
+						margin-left: 0;
+					} 
+				}
+			}
+		}
+	}
+	#main {
+		width: 100%;
+		padding: 0;
+		padding-top: 100px;
+		margin-top:0;
+		overflow: hidden;
+	
+		.about {
+			width: 300px;
+			padding: 0 10px;
+			margin: 0 auto 80px auto;
+			
+			figure {
+				margin-left:-248px;
+	
+				path[fill="#008adf"], path[fill="#004a78"], path[fill="#0069aa"], path[fill="#009eff"], path[fill="#3ab4ff"] {
+					display: none;
+				}
+			}
+			.infos {
+				width: 300px;
+				margin: 90px 0 0 0;
+			}
+		}
+		.works {
+			width: 300px;
+			padding: 0 10px;
+			margin: auto;
+			
+			.all-wrapper > ul {
+				height: auto;
+				
+				li {
+					float: none;
+				}
+			}
+			.works-wrapper {
+				.bigs {
+					width: 300px;
+					
+					.big {
+						position: relative;
+						
+						div {
+							float: none;
+							width: auto;
+							
+							.desc {
+								margin-bottom: 10px;
+							}
+						}
+						img {
+							width: 300px;
+						}
+						p.back {
+							position: absolute;
+							bottom: -55px;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		.footer-wrap {
+			width: 320px;
+			
+			ul {
+				float: none;
+				text-align: center;
+			}
+			p {
+				margin-top: 20px;
+				float: none;
+				text-align: center;
+			}
+		}
+	}
+}

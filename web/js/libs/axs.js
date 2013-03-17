@@ -23,12 +23,12 @@ $(function(){
         },
         // Add class hover
         addHover : function(){            
-            $(document).on('hover', 'a, input, button, textarea', '', function(){
+            $(document).on('hover', 'a, input, button, textarea, .isotope-item', '', function(){
                 if($(this).is('.hover:focus') == false){
                     $(this).toggleClass('hover');
                 }
             });
-            $(document).on('blur', 'a, input, button, textarea', '', function(){
+            $(document).on('blur', 'a, input, button, textarea, .isotope-item', '', function(){
                 $(this).removeClass('hover');
             });
         },

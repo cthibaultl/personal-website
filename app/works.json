@@ -2,7 +2,7 @@
     {
         "id": "project-10",
         "title": "Jérémy Fiset",
-        "alt": "Carte d'affaire Jérémy Fiset.",
+        "alt": "Carte d'affaire Jérémy Fiset",
         "date": "2011",
         "desc": "Carte d'affaire du luthier Jérémy Fiset",
         "link": "",
@@ -13,7 +13,7 @@
     {
         "id": "project-9",
         "title": "Perlimpinpin",
-        "alt": "Site Web Perlimpinpin.",
+        "alt": "Site Web Perlimpinpin",
         "date": "2011",
         "desc": "Il s'agissait de faire les sections produits et collections afin de pouvoir vendre en ligne et de décliner le style graphique selon celui déjà existant. Les technologies utilisées sont Ruby on Rails, HTML5, CSS, Javascript.",
         "link": "http://www.perlimpinpin.com/",
@@ -24,7 +24,7 @@
     {
         "id": "project-8",
         "title": "Sarah Thibault",
-        "alt": "Site Web Sarah Thibault.",
+        "alt": "Site Web Sarah Thibault",
         "date": "2011",
         "desc": "Site Web de la joaillière contemporaine Sarah Thibault. Les technologies utilisées sont Silex, HTML5, CSS, Javascript.",
         "link": "http://www.sarah-thibault.com",
@@ -35,7 +35,7 @@
     {
         "id": "project-7",
         "title": "Sarah Thibault",
-        "alt": "Carte d'affaire Sarah Thibault.",
+        "alt": "Carte d'affaire Sarah Thibault",
         "date": "2011",
         "desc": "Carte d'affaire de la joaillière contemporaine Sarah Thibault",
         "link": "",
@@ -46,7 +46,7 @@
     {
         "id": "project-6",
         "title": "PixelFrags",
-        "alt": "Site Web Pixel Frags.",
+        "alt": "Site Web Pixel Frags",
         "date": "2011",
         "desc": "C'est un projet qui n'a malheureusement pas vu le jour. Il s'agissait d'un site Web répertoriant les évènements multimédias du Québec.",
         "link": "",
@@ -57,7 +57,7 @@
     {
         "id": "project-5",
         "title": "Lecture",
-        "alt": "Dessin d'une elfe lisant un livre.",
+        "alt": "Dessin d'une elfe lisant un livre",
         "date": "2011",
         "desc": "Dessin d'une elfe illustrant la thématique de la lecture.",
         "link": "",
@@ -68,7 +68,7 @@
     {
         "id": "project-4",
         "title": "Confiserie",
-        "alt": "Dessin d'une jeune fille flottant et essayant d'attraper des pâtisseries.",
+        "alt": "Dessin d'une jeune fille flottant et essayant d'attraper des pâtisseries",
         "date": "2011",
         "desc": "Dessin d'une jeune fille illustrant la thématique de la confiserie et de la chocolaterie,",
         "link": "",
@@ -79,7 +79,7 @@
     {
         "id": "project-3",
         "title": "Étonnement",
-        "alt": "Dessin d'une elfe surprise.",
+        "alt": "Dessin d'une elfe surprise",
         "date": "2011",
         "desc": "Dessin d'une elfe illustrant la thématique de la surprise.",
         "link": "",
@@ -90,7 +90,7 @@
     {
         "id": "project-2",
         "title": "Immatérielle",
-        "alt": "Dessin d'une elfe flottant dans un espace bleu semblant immatérielle.",
+        "alt": "Dessin d'une elfe flottant dans un espace bleu semblant immatérielle",
         "date": "2011",
         "desc": "Dessin d'une elfe illustrant la thématique de l'irréel.",
         "link": "",
@@ -101,7 +101,7 @@
     {
         "id": "project-1",
         "title": "Ressourcerie de Lotbinière",
-        "alt": "Site Web de la Ressourcerie de Lotbinière.",
+        "alt": "Site Web de la Ressourcerie de Lotbinière",
         "date": "2011",
         "desc": "Site Web de la Ressourcerie de Lotbinière.",
         "link": "http://www.ressourcerielotbiniere.ca/",

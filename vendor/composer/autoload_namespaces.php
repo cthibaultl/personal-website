@@ -12,6 +12,7 @@ return array(
     'Symfony\\Component\\HttpFoundation\\' => $vendorDir . '/symfony/http-foundation/',
     'Symfony\\Component\\EventDispatcher\\' => $vendorDir . '/symfony/event-dispatcher/',
     'Silex' => $vendorDir . '/silex/silex/src/',
+    'Psr\\Log\\' => $vendorDir . '/psr/log/',
     'Pimple' => $vendorDir . '/pimple/pimple/lib/',
     'Cthibaultl' => $baseDir . '/src/',
 );

@@ -25,7 +25,7 @@
         }
         .infos {
             width: 30em;
-            margin-left: 15px;
+            margin: 0 10px 0 15px;
             @include inline-block;
             vertical-align:top;
             
@@ -38,7 +38,7 @@
         position:relative;
         z-index:1;
         
-        > ul {
+        .all-wrapper > ul {
             padding: 0 0 22px 0;
             margin: 0;
             height:2.5em;
@@ -68,6 +68,7 @@
         }
         .works-wrapper {
             clear: both;
+            position: relative;
             
             ul {
                 margin: 0;
@@ -140,7 +141,13 @@
                     }
                 }
             }
-            .bigs {                
+            .bigs {
+            	position: absolute;
+            	width: 980px;
+            	left:0;
+            	top:0;
+            	z-index: 100;
+            	           
                 .big {
                     display: none;
                     
@@ -169,8 +176,12 @@
                             margin: 3px 0 2px 0;
                             font-size: 0.75em;
                         }
-                        time {
-                            font-size: 0.75em;
+                        .date {
+	                        margin:0;
+	                        
+	                        time {
+                            	font-size: 0.75em;
+                            }
                         }
                         .desc {
                             margin: 6px 0 20px 0;
